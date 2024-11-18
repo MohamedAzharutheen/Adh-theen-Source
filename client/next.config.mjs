@@ -21,31 +21,19 @@ const nextConfig = {
     emailID:'aldeentoursandtravels@gmail.com'
   },
 
-  async headers() {
-    return [
-      {
-        source: "/api/:path*",
-        headers: [
-          { key: "Access-Control-Allow-Credentials", value: "true" },
-          { key: "Access-Control-Allow-Origin", value: "https://www.domain.com" },
-          { key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
-          { key: "Access-Control-Allow-Headers", value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" },
-        ]
-      },
-      // {
-      //   source: '/:all*(svg|jpg|png)',
-      //   locale: false,
-      //   headers: [
-      //     {
-      //       key: 'Cache-Control',
-      //       value: 'public, max-age=60000, must-revalidate',
-      //     }
-      //   ],
-      // },
-    ]
-},
-  };
-
+async headers() {
+  return [
+    {
+      source: "/api/:path*",
+      headers: [
+        { key: "Access-Control-Allow-Credentials", value: "true" },
+        { key: "Access-Control-Allow-Origin", value: "https://adh-theen-frontned.vercel.app" }, // Replace with your frontend URL
+        { key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
+        { key: "Access-Control-Allow-Headers", value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" },
+      ]
+    }
+  ];
+}
 
 
 export default nextConfig;
