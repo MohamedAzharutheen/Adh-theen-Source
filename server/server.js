@@ -11,11 +11,20 @@ dotenv.config();
 const app = express();
 
 // CORS configuration
+// const corsOptions = {
+//   origin: 'https://adh-theen-frontned.vercel.app', // your frontend's origin
+//   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+// };
+// app.use(cors(corsOptions));
 const corsOptions = {
-  origin: 'https://adh-theen-frontned.vercel.app', // your frontend's origin
-  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+  origin: process.env.NODE_ENV === "production"
+    ? "https://adh-theen-frontend.vercel.app" // Correct production frontend URL
+    : "http://localhost:8080", // Development frontend URL
+  credentials: true, // Allow cookies
 };
+
 app.use(cors(corsOptions));
+
 
 // Check if in production environment
 const isProduction = process.env.NODE_ENV === 'production';
