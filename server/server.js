@@ -24,7 +24,10 @@ const corsOptions = {
   credentials: true, // Allow cookies
 };
 
-app.use(cors(corsOptions));
+app.use(cors(corsOptions));  // Apply CORS settings globally
+// Handle preflight (OPTIONS) requests
+app.options('*', cors(corsOptions));  // This handles preflight requests for all routes
+
 
 
 // Check if in production environment
@@ -41,10 +44,8 @@ app.use(session({
   }),
   cookie: {
     httpOnly: true,
-    // secure: isProduction, // Use secure cookies in production
-    secure: process.env.NODE_ENV === 'production', // Secure cookies in production
-    // sameSite: isProduction ? 'None' : 'Lax', // None for production, Lax for development
-    sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
+    secure: isProduction, // Secure cookies in production
+    sameSite: isProduction ? 'None' : 'Lax', // None for production, Lax for development
     maxAge: 1800000, // 30 minutes in milliseconds
   },
 }));
