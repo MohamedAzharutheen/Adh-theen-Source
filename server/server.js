@@ -7,6 +7,7 @@ const packageRoutes = require('./routes/packageroutes');
 const userRoutes = require('./routes/userroutes');
 const galleryRoutes = require('./routes/galleryroutes');
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 dotenv.config();
 const app = express();
 
@@ -32,11 +33,18 @@ const isProduction = process.env.NODE_ENV === 'production';
 app.use(session({
   secret: process.env.SESSION_SECRET || 'Y4z7mQ!f3J&*T0$eR1P5v%#p1x!fq',
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
+  store:MongoStore.create({
+    mongoUrl: process.env.MONGODB_URI_PROD,
+    collectionName: 'sessions', // Optional: Set the MongoDB collection for sessions
+    ttl: 1800, // Time-to-live in seconds (30 minutes)
+  }),
   cookie: {
     httpOnly: true,
-    secure: isProduction, // Use secure cookies in production
-    sameSite: isProduction ? 'None' : 'Lax', // None for production, Lax for development
+    // secure: isProduction, // Use secure cookies in production
+    secure: process.env.NODE_ENV === 'production', // Secure cookies in production
+    // sameSite: isProduction ? 'None' : 'Lax', // None for production, Lax for development
+    sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
     maxAge: 1800000, // 30 minutes in milliseconds
   },
 }));
@@ -52,13 +60,12 @@ const mongoURI =
     : process.env.MONGODB_URI_DEV; // Use development MongoDB URI (localhost)
 
 
-// Mongoose connection
-mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log("Connected to MongoDB"))
-.catch((error) => console.error("MongoDB connection error:", error));
+    console.log('Environment:', process.env.NODE_ENV);
+    console.log('Connecting to MongoDB URI:', mongoURI);
+    
+    mongoose.connect(mongoURI)
+    .then(() => console.log("Connected to MongoDB"))
+    .catch((error) => console.error("MongoDB connection error:", error));
 
 
 
