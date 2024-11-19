@@ -19,7 +19,7 @@ const ChangePassword = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post("http://localhost:5000/api/user/changepassword", {
+            const response = await axios.post(`${process.env.url}/api/user/changepassword`, {
                 currentPassword,
                 newPassword,
                 confirmPassword,
