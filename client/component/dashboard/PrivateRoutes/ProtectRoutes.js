@@ -12,7 +12,7 @@ const AuthenticatedComponent = (props)=>{
 useEffect(()=>{
     const verifySession = async()=>{
         try {
-            const response = await axios.get('http://localhost:5000/api/user/check-session',{withCredentials:true});
+            const response = await axios.get(`${process.env.url}/api/user/check-session`,{withCredentials:true});
            console.log("check",response) 
             
             if(response.data.isAuthenticated){
