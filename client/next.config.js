@@ -36,7 +36,7 @@ async headers() {
 }
 
 
-export default nextConfig;
+ module.exports = nextConfig;
 
 
 
