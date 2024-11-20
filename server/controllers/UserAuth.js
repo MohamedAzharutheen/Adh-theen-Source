@@ -39,12 +39,18 @@ exports.login = async (req, res) => {
       userId: user._id,
       email: user.email,
     };      
-                // Log session information for debugging
-                console.log('Session after login:', req.session);
-             res.json({ message: 'Login successful.' });
-    } catch (error) {
-      res.status(500).json({ error: error.message });
+  // Save the session explicitly
+  req.session.save((err) => {
+    if (err) {
+      console.error('Session save error:', err);
+      return res.status(500).json({ message: 'Login failed.' });
     }
+    console.log('Session after login:', req.session);
+    res.json({ message: 'Login successful.' });
+  });
+} catch (error) {
+  res.status(500).json({ error: error.message });
+}
   };
 
   exports.checkSession =(req, res) => {
@@ -53,8 +59,9 @@ exports.login = async (req, res) => {
       res.json({ isAuthenticated: true });
     } else {
       res.json({ isAuthenticated: false });
-      console.log("UnAuth",req.session)
-      console.log("UnAuthorized person",req.session.username)
+      // console.log("UnAuth",req.session)
+      // console.log("UnAuthorized person",req.session.username)
+      console.log('Unauthorized session:', req.session);
     }
   };
 

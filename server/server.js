@@ -19,8 +19,8 @@ const app = express();
 // app.use(cors(corsOptions));
 const corsOptions = {
   origin: process.env.NODE_ENV === "production"
-    ? "https://adh-theen-frontned.vercel.app" // Correct production frontend URL
-    : "http://localhost:8080", // Development frontend URL
+    ? "https://adh-theen-frontned.vercel.app"
+    : "http://localhost:8080",
   credentials: true, // Allow cookies
 };
 
