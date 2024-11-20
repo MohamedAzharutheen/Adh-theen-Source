@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const path = require('path');
 const bannerRoutes = require('./routes/bannerroutes');
 const packageRoutes = require('./routes/packageroutes');
 const userRoutes = require('./routes/userroutes');
@@ -38,7 +39,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   store:MongoStore.create({
-    mongoUrl: process.env.MONGODB_URI_PROD,
+    mongoUrl: process.env.MONGODB_URI_DEV,
     collectionName: 'sessions', // Optional: Set the MongoDB collection for sessions
     ttl: 1800, // Time-to-live in seconds (30 minutes)
   }),
@@ -51,14 +52,17 @@ app.use(session({
 }));
 /// Middilever setup
 app.use(express.json());
+
+app.use('/uploads', express.static(path.join(__dirname, '../client/public/uploads'))); // Serve static files
+
 // server  Port 
 const PORT = process.env.PORT || 5003
 
 // Determine the correct MongoDB URI based on the environment
 const mongoURI =
   process.env.NODE_ENV === "production"
-    ? process.env.MONGODB_URI_PROD // Use production MongoDB URI
-    : process.env.MONGODB_URI_DEV; // Use development MongoDB URI (localhost)
+    ?   process.env.MONGODB_URI_DEV // Use production MongoDB URI
+    :process.env.MONGODB_URI_PROD ; // Use development MongoDB URI (localhost)
 
 
     console.log('Environment:', process.env.NODE_ENV);
