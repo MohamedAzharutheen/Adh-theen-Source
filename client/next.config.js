@@ -98,7 +98,7 @@ const nextConfig = {
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin",   value: prod
-           ?  "https://adh-theen-frontend-git-main-mohamed-azharutheens-projects.vercel.app" // ? "https://adh-theen-frontend.vercel.app"
+           ?  "https://adh-theen-frontned.vercel.app/" // ? "https://adh-theen-frontend.vercel.app"
             : "http://localhost:8080", },
           { key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
           { key: "Access-Control-Allow-Headers", value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" },
