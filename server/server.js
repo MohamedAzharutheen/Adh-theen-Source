@@ -19,7 +19,7 @@ const app = express();
 // app.use(cors(corsOptions));
 const corsOptions = {
   origin: process.env.NODE_ENV === "production"
-    ? "https://adh-theen-frontend.vercel.app" // Correct production frontend URL
+    ? "https://adh-theen-frontend-git-main-mohamed-azharutheens-projects.vercel.app/" // Correct production frontend URL
     : "http://localhost:8080", // Development frontend URL
   credentials: true, // Allow cookies
 };
