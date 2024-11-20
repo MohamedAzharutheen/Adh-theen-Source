@@ -23,6 +23,7 @@ useEffect(()=>{
                 router.push('/admin/login'); // Redirect to login if not authenticated
             }
         } catch (error) {
+          console.error('Session verification error:', error);
             setIsAuthenticated(false);
           router.push('/admin/login'); // Redirect to login on error
         }
