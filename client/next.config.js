@@ -49,7 +49,7 @@ const nextConfig = {
   swcMinify: true,
   productionBrowserSourceMaps: true,
   env: {
-    url: prod ? "http://localhost:5000" : "https://adh-theen-source.vercel.app",
+    url: prod ? "https://adh-theen-source.vercel.app" : "http://localhost:5000",
     dev: !prod,
     phoneDis: "+91 950077 1134",
     phoneNum: "+91 9500771134",
