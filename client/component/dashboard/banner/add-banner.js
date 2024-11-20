@@ -22,7 +22,7 @@ const AddBanner = ()=> {
  const fetchBannerData = async()=>{
 
   try {
-    const response = await axios.get('http://localhost:5000/api/banner/get-banner');
+    const response = await axios.get(`${process.env.url}/api/banner/get-banner`);
     setBanner(response.data);
 //  Set only the first banner item in the state
  if(response.data.length > 0){
