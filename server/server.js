@@ -39,7 +39,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   store:MongoStore.create({
-    mongoUrl: process.env.MONGODB_URI_DEV,
+    mongoUrl: process.env.MONGODB_URI_PROD,
     collectionName: 'sessions', // Optional: Set the MongoDB collection for sessions
     ttl: 1800, // Time-to-live in seconds (30 minutes)
   }),
@@ -61,8 +61,8 @@ const PORT = process.env.PORT || 5003
 // Determine the correct MongoDB URI based on the environment
 const mongoURI =
   process.env.NODE_ENV === "production"
-    ?   process.env.MONGODB_URI_DEV // Use production MongoDB URI
-    :process.env.MONGODB_URI_PROD ; // Use development MongoDB URI (localhost)
+    ? process.env.MONGODB_URI_PROD    // Use production MongoDB URI
+    :process.env.MONGODB_URI_DEV; // Use development MongoDB URI (localhost)
 
 
     console.log('Environment:', process.env.NODE_ENV);
