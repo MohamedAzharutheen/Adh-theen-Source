@@ -22,6 +22,7 @@ const corsOptions = {
   origin: process.env.NODE_ENV === "production"
     ? "https://adh-theen-frontned.vercel.app"
     : "http://localhost:8080",
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true, // Allow cookies
 };
 

@@ -58,6 +58,7 @@ const AddPackage = ()=> {
     try {
       if (isEditing) {
         // Edit existing package
+        console.log('API URL:', process.env.url);
         const response = await axios.put(`${process.env.url}/api/package/update-package/${editIndex}`, data, {
           headers: {
             'Content-Type': 'multipart/form-data',
