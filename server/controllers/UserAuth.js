@@ -53,15 +53,24 @@ exports.login = async (req, res) => {
 }
   };
 
+  // exports.checkSession = (req, res) => {
+  //   console.log('Session during check:', req.session);
+  //   if (req.session && req.session.user) {
+  //     return res.json({ isAuthenticated: true });
+  //   }
+  //   console.log('Unauthorized session:', req.session);
+  //   res.json({ isAuthenticated: false });
+  // };
+  
+
   exports.checkSession =(req, res) => {
     console.log('Session on check:', req.session);
     if (req.session.user) {
       res.json({ isAuthenticated: true });
     } else {
       res.json({ isAuthenticated: false });
-      // console.log("UnAuth",req.session)
-      // console.log("UnAuthorized person",req.session.username)
-      console.log('Unauthorized session:', req.session);
+      console.log("UnAuth",req.session)
+      console.log("UnAuthorized person",req.session.username)
     }
   };
 

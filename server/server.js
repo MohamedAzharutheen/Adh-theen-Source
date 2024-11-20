@@ -34,6 +34,9 @@ app.options('*', cors(corsOptions));  // This handles preflight requests for all
 // Check if in production environment
 const isProduction = process.env.NODE_ENV === 'production';
 
+app.set('trust proxy', 1); // Required for Vercel proxy
+
+
 app.use(session({
   secret: process.env.SESSION_SECRET || 'Y4z7mQ!f3J&*T0$eR1P5v%#p1x!fq',
   resave: false,
@@ -45,8 +48,8 @@ app.use(session({
   }),
   cookie: {
     httpOnly: true,
-    secure: isProduction, // Secure cookies in production
-    sameSite: isProduction ? 'None' : 'Lax', // None for production, Lax for development
+    secure: process.env.NODE_ENV === 'production', // Secure cookies in production
+    sameSite: process.env.NODE_ENV === 'production'  ? 'None' : 'Lax', // None for production, Lax for development
     maxAge: 1800000, // 30 minutes in milliseconds
   },
 }));
