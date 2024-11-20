@@ -731,12 +731,14 @@ const handleFileChange = (e) => {
         fileInputRef.current.value = null;
 
       } else {
+        console.log("prod",`${process.env.url}/api/gallery/add-gallery`);
         const response = await axios.post(
-          `${process.env.url}/api/gallery/add-gallery`, 
+          `https://adh-theen-source.vercel.app/api/gallery/add-gallery`, 
           data, 
           { headers: { 'Content-Type': 'multipart/form-data' }, withCredentials: true }
         );
         setGallery([...gallery, response.data.gallery]);
+        
         resetForm();
         fileInputRef.current.value = null;
 
