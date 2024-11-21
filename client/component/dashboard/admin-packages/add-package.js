@@ -75,7 +75,7 @@ const AddPackage = ()=> {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
-          withCredentials: true
+          // withCredentials: true
         });
         setPackages((prevPackages) => [...prevPackages, response.data]);
       }

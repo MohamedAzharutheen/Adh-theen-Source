@@ -3,8 +3,8 @@ const { addPackage, getPackage, updatePackage, deletePackage } = require('../con
 const upload = require('../middleware/uploads');
 const auth = require('../middleware/auth');
 const router=express.Router();
-
-router.post('/add-package',auth,upload.single('image'),addPackage);
+router.post('/add-package',upload.single('image'),addPackage);
+// router.post('/add-package',auth,upload.single('image'),addPackage);
 router.put('/update-package/:id',auth,upload.single('image'),updatePackage);
 router.get('/get-package',getPackage);
 router.delete('/delete-package/:id',auth,deletePackage);
