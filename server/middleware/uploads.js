@@ -6,7 +6,10 @@ const { v4: uuidv4 } = require('uuid');
 
 const storage = multer.diskStorage({
     destination: (req, file , cb)=>{
-        cb(null,'../client/public/uploads');
+        // cb(null,'../client/public/uploads');
+           cb(null,'https://adh-theen-frontned.vercel.app/public/uploads');
+        
+
     },
     filename:(req,file,cb)=>{
         // cb(null,Date.now()+ path.extname(file.originalname)); // Set unique filename with timestamp
