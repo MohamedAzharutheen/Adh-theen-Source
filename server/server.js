@@ -57,7 +57,7 @@
   /// Middilever setup
   app.use(express.json());
 
-  app.use('/uploads', express.static(path.join(__dirname, 'https://adh-theen-frontned.vercel.app/public/uploads'))); // Serve static files
+  app.use('/uploads', express.static(path.join(__dirname, 'https://adh-theen-frontned.vercel.app/uploads'))); // Serve static files
 
   // server  Port 
   const PORT = process.env.PORT || 5003
