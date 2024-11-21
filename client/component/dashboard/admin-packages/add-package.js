@@ -218,7 +218,7 @@ const AddPackage = ()=> {
               <div className="col mt-3">
                 <input type="text" name="Price" required value={formData.Price} onChange={handleChange} className="form-control" placeholder="Package Price" />
               </div>
-              <div className="col mt-3">
+              {/* <div className="col mt-3">
                 <input type="file" required className="form-control" ref={fileInputRef}
                   onChange={(e) => {
                     if (e.target.files[0]) {
@@ -236,7 +236,7 @@ const AddPackage = ()=> {
                       style={{ borderRadius: '5px' }} />
                   </div>
                 )}
-              </div>
+              </div> */}
               <div className='mt-3'>
                 <button type="submit" className='btn-add cw fs-16 fw6'>{isEditing ? "Update Package" : "Add Package"}</button>
             {isEditing &&    <button type="submit" onClick={handlePopup} className='btn-add cw fs-16 fw6 mt-3'>Cancel</button> }
