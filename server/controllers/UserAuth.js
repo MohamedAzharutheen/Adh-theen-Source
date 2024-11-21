@@ -100,7 +100,7 @@ exports.login = async (req, res) => {
           return res.status(400).json({ message: 'New password and confirm password do not match.' });
         }
         // Validate new password strength
-        const passwordStrengthRegex = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[!@#$%^&])[A-Za-z\d!@#$%^&]{8,}$/;
+        const passwordStrengthRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&])[A-Za-z\d!@#$%^&]{8,}$/;
         if (!passwordStrengthRegex.test(newPassword)) {
             return res.status(400).json({
                 message: 'New password must be at least 8 characters long, include at least one uppercase letter, one lowercase letter, one number, and one special character.'
