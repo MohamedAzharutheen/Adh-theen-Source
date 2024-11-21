@@ -38,6 +38,7 @@ exports.login = async (req, res) => {
     req.session.user = {
       userId: user._id,
       email: user.email,
+      username: user.username,
     };      
   // Save the session explicitly
   req.session.save((err) => {
@@ -80,7 +81,7 @@ exports.login = async (req, res) => {
     try {
     
     const {currentPassword,newPassword,confirmPassword}=req.body;
-    const { username } = req.session;
+    const { username } = req.session.user;
     if (!username) {
       return res.status(401).json({ message: 'Unauthorized. Please log in.' });
     }
@@ -114,6 +115,45 @@ exports.login = async (req, res) => {
             res.status(500).json({ error: error.message });
           }
   }
+
+  // exports.changePassword = async (req,res)=>{
+  //   try {
+    
+  //   const {currentPassword,newPassword,confirmPassword}=req.body;
+  //   const { username } = req.session;
+  //   if (!username) {
+  //     return res.status(401).json({ message: 'Unauthorized. Please log in.' });
+  //   }
+  //     // Retrieve the user from the database
+  //     const user = await UserSchema.findOne({username});
+  //     if(!user){
+  //       return res.status(404).json({ message: 'User not found.' });
+  //     }
+  //      // Verify current password
+  //      const isCurrentPasswordValid = await bcrypt.compare(currentPassword, user.password); 
+  //      if(!isCurrentPasswordValid){
+  //       return res.status(400).json({ message: 'Current password is incorrect.' });
+  //      }
+  //       // Check if new password and confirm password match
+  //       if(newPassword !== confirmPassword){
+  //         return res.status(400).json({ message: 'New password and confirm password do not match.' });
+  //       }
+  //       // Validate new password strength
+  //       const passwordStrengthRegex = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[!@#$%^&])[A-Za-z\d!@#$%^&]{8,}$/;
+  //       if (!passwordStrengthRegex.test(newPassword)) {
+  //           return res.status(400).json({
+  //               message: 'New password must be at least 8 characters long, include at least one uppercase letter, one lowercase letter, one number, and one special character.'
+  //           });
+  //       }
+  //          // Hash the new password and update it in the database
+  //          user.password = await bcrypt.hash(newPassword, 10);
+  //          await user.save();
+       
+  //          res.json({ message: 'Password changed successfully.' });
+  //         } catch (error) {
+  //           res.status(500).json({ error: error.message });
+  //         }
+  // }
 
   // // Logout
   exports.logout = async (req, res) => {
