@@ -83,6 +83,9 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   productionBrowserSourceMaps: true,
+  images: {
+    domains: ['res.cloudinary.com'], // Add Cloudinary's domain here
+  },
   env: {
     url: prod ? "https://adh-theen-source.vercel.app" : "http://localhost:5000",
     dev: !prod,
