@@ -1,5 +1,5 @@
 const PackageData = require('../models/PackageSchema')
-
+const cloudinary = require('../utils/cloudinary');
 exports.addPackage = async (req,res)=>{
     try {
        const {Price,PackageName,Depature,MekkahHotelName,MadhinaHotelName}= req.body;
@@ -63,28 +63,35 @@ exports.updatePackage = async (req,res) =>{
 
 // }
 
-// Delete Package
 exports.deletePackage = async (req, res) => {
   try {
     const { id } = req.params;
+    console.log("Attempting to delete package with ID:", id);
 
     const packageToDelete = await PackageData.findById(id);
     if (!packageToDelete) {
+      console.log("Package not found for ID:", id);
       return res.status(404).json({ message: 'Package not found' });
     }
 
     // Optional: Remove file from Cloudinary
     if (packageToDelete.Image) {
-      const publicId = packageToDelete.Image.split('/').pop().split('.')[0]; // Extract Cloudinary public ID
-      await cloudinary.uploader.destroy(publicId);
+      try {
+        const urlParts = packageToDelete.Image.split('/');
+        const publicIdWithExtension = urlParts[urlParts.length - 1];
+        const publicId = publicIdWithExtension.split('.')[0];
+        await cloudinary.uploader.destroy(publicId);
+        console.log("Cloudinary image deleted successfully:", publicId);
+      } catch (cloudinaryError) {
+        console.error("Error deleting image from Cloudinary:", cloudinaryError.message);
+      }
     }
 
-    await packageToDelete.remove();
-
+    // Deleting the package document
+    await PackageData.findByIdAndDelete(id); // Correct method to delete
     res.status(200).json({ message: 'Package deleted successfully' });
   } catch (error) {
+    console.error("Error deleting package:", error.message);
     res.status(500).json({ error: error.message });
   }
 };
-
-

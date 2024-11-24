@@ -1,13 +1,16 @@
 import moment from 'moment';
 import Image from 'next/image';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { MdDelete, MdModeEditOutline } from "react-icons/md";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import DataTable from 'react-data-table-component';
 import axios from 'axios';
 import withAuth from '../PrivateRoutes/ProtectRoutes';
  const AddPackage = ()=> {
   const [imagePreview, setImagePreview] = useState('');
   const [packages, setPackages] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     PackageName: '',
     Depature: '',
@@ -44,6 +47,12 @@ import withAuth from '../PrivateRoutes/ProtectRoutes';
   };
   const handleAddPackage = async (e) => {
     e.preventDefault();
+  // Validate required fields
+  if (!formData.PackageName || !formData.Depature || !formData.Price || !fileInputRef.current.files[0]) {
+    toast.error("Please fill in all required fields.");
+    return;
+  }
+
     const data = new FormData();
     data.append('PackageName', formData.PackageName);
     data.append('Depature', formData.Depature);
@@ -53,7 +62,7 @@ import withAuth from '../PrivateRoutes/ProtectRoutes';
     if (fileInputRef.current && fileInputRef.current.files[0]) {
       data.append('image', fileInputRef.current.files[0]);
     }
-
+    setLoading(true);
     try {
       if (isEditing) {
         // Edit existing package
@@ -68,10 +77,9 @@ import withAuth from '../PrivateRoutes/ProtectRoutes';
         setPackages((prevPackages) =>
           prevPackages.map((pkg) => pkg._id === editIndex ? response.data.updatedPackage : pkg)
         );
+        toast.success("Package updated successfully!");
       } else {
         // Add new package
-
-       
         const response = await axios.post(`${process.env.url}/api/package/add-package`, data, {
           headers: {
             'Content-Type': 'multipart/form-data',
@@ -79,6 +87,7 @@ import withAuth from '../PrivateRoutes/ProtectRoutes';
           // withCredentials: true
         });
         setPackages((prevPackages) => [...prevPackages, response.data]);
+        toast.success("Package added successfully!");
       }
 
       // Reset form and state
@@ -94,9 +103,12 @@ import withAuth from '../PrivateRoutes/ProtectRoutes';
       setIsEditing(false);
       setEditIndex(null);
       fileInputRef.current.value = null;
+
     } catch (error) {
       console.error("Error saving package:", error.message);
+      toast.error("Error saving package.");
     }
+    setLoading(false);
   };
 
   const handleEditPackage = (packageData) => {
@@ -127,34 +139,38 @@ import withAuth from '../PrivateRoutes/ProtectRoutes';
   const handleDeletePackage = async (packageId) => {
     const isConfirmed = window.confirm('Are you sure you want to delete this Packages ? ');
  if(isConfirmed){
+    const oldPackages = [...packages]; // Save current state for rollback
+    setPackages((prevPackages) => prevPackages.filter((pkg) => pkg._id !== packageId)); // Optimistic UI
+    
     try {
       await axios.delete(`${process.env.url}/api/package/delete-package/${packageId}`,
         {withCredentials: true,});
-      setPackages((prevPackages) => prevPackages.filter((pkg) => pkg._id !== packageId));
+      // setPackages((prevPackages) => prevPackages.filter((pkg) => pkg._id !== packageId));
         // Reset form and state
-        setFormData({
-          PackageName: '',
-          Depature: '',
-          MekkahHotelName: '',
-          MadhinaHotelName: '',
-          Price: '',
-          image: '',
-        });
-        fileInputRef.current.value = null;
-        setImagePreview('');
-        setIsEditing(false);
+        // setFormData({
+        //   PackageName: '',
+        //   Depature: '',
+        //   MekkahHotelName: '',
+        //   MadhinaHotelName: '',
+        //   Price: '',
+        //   image: '',
+        // });
+        // fileInputRef.current.value = null;
+        // setImagePreview('');
+        // setIsEditing(false);
 
     } 
 
     catch (error) {
       console.error("Error deleting package:", error.message);
+      setPackages(oldPackages); // Rollback on error
     }
   }
   };
 
 
  
-  const columns = [
+  const columns = useMemo(()=> [
     {
       name: 'Package Image',
       selector: row => (
@@ -188,9 +204,9 @@ import withAuth from '../PrivateRoutes/ProtectRoutes';
           <MdModeEditOutline size={24} onClick={()=>handleEditPackage(row)} className='cursor'/>
           <MdDelete size={24} onClick={()=>handleDeletePackage(row._id)} className='cursor'/>
         </>
-      ),
+     ),
     },
-  ];
+  ], [packages]);
 
   return (
     <>
@@ -239,7 +255,18 @@ import withAuth from '../PrivateRoutes/ProtectRoutes';
                 )}
               </div>
               <div className='mt-3'>
-                <button type="submit" className='btn-add cw fs-16 fw6'>{isEditing ? "Update Package" : "Add Package"}</button>
+                <button type="submit" className='btn-add cw fs-16 fw6' disabled={loading}>
+              {loading ? (
+                     <span>
+                     <span className="spinner-border spinner-border-sm me-2"></span> 
+                     {isEditing ? "Updating..." : "Adding..."}
+                   </span>
+                 ) : (
+                   isEditing ? "Update Package" : "Add Package"
+                 )}
+           
+              
+              </button>
             {isEditing &&    <button type="submit" onClick={handlePopup} className='btn-add cw fs-16 fw6 mt-3'>Cancel</button> }
               </div>
             </form>
@@ -261,7 +288,25 @@ import withAuth from '../PrivateRoutes/ProtectRoutes';
 
         </div>
       </section>
+      <ToastContainer />
       <style jsx>{`
+
+      .spinner-border {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 0.2em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spinner-border 0.75s linear infinite;
+}
+
+@keyframes spinner-border {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
        .form {
     border: 1px solid #e0e0e0;
     padding: 1.5rem;
