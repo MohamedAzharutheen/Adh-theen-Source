@@ -48,11 +48,12 @@ import withAuth from '../PrivateRoutes/ProtectRoutes';
   const handleAddPackage = async (e) => {
     e.preventDefault();
   // Validate required fields
-  if (!formData.PackageName || !formData.Depature || !formData.Price || !fileInputRef.current.files[0]) {
+
+  // Validate required fields
+  if (!formData.PackageName || !formData.Depature || !formData.Price || (!fileInputRef.current.files[0] && !isEditing)) {
     toast.error("Please fill in all required fields.");
     return;
   }
-
     const data = new FormData();
     data.append('PackageName', formData.PackageName);
     data.append('Depature', formData.Depature);
@@ -61,6 +62,9 @@ import withAuth from '../PrivateRoutes/ProtectRoutes';
     data.append('Price', formData.Price);
     if (fileInputRef.current && fileInputRef.current.files[0]) {
       data.append('image', fileInputRef.current.files[0]);
+    }
+    else if (isEditing) {
+      data.append('image', formData.image); // Use the existing image URL
     }
     setLoading(true);
     try {
@@ -236,7 +240,9 @@ import withAuth from '../PrivateRoutes/ProtectRoutes';
                 <input type="text" name="Price" required value={formData.Price} onChange={handleChange} className="form-control" placeholder="Package Price" />
               </div>
               <div className="col mt-3">
-                <input type="file" required className="form-control" ref={fileInputRef}
+                <input type="file"
+                required={!isEditing}
+                 className="form-control" ref={fileInputRef}
                   onChange={(e) => {
                     if (e.target.files[0]) {
                       const fileURL = URL.createObjectURL(e.target.files[0]);

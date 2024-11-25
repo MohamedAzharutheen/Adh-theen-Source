@@ -3,16 +3,19 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import Link from 'next/link';
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [failedMessage, setFailedMessage] = useState('');
   const [success,setSuccess]=useState("");
+  const [loading,setLoading]=useState(false )
   const [showPassword,setShowPassword]=useState(false )
   const router = useRouter();
 const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
     // Regular expression for a simple email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
  
@@ -40,7 +43,7 @@ const handleSubmit = async (event) => {
         setFailedMessage("Please Fill The Correct Email And Password")
        console.error('Login error:', error); // Debugging line
       }
-    
+    setLoading(false);
  
 
    // Your login logic goes here
@@ -75,8 +78,22 @@ return (
         <div><p>{errorMessage}</p></div>
         <div><p className='pdb10 red'>{failedMessage}</p></div>
           <div>
-            <button type="submit" className='butt'>Login</button>
+          <button type="submit" className='butt' disabled={loading}>
+              {loading ? (
+                     <span>
+                     <span className="spinner-border spinner-border-sm me-2"></span> 
+                     login ...
+                   </span>
+                 ) : (
+                  'login'
+                 )}
+           
+              
+              </button>
+            {/* <button type="submit" className='butt'>Login</button> */}
           </div>
+          
+          <Link href={"/"}> <p className={`fs-12 mt-3 tac fwb`}>Go To website</p> </Link>
           
         </form>
       </div>
@@ -85,6 +102,21 @@ return (
     </section>
       <style jsx>
       {`
+            .spinner-border {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 0.2em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spinner-border 0.75s linear infinite;
+}
+
+@keyframes spinner-border {
+  100% {
+    transform: rotate(360deg);
+  }
+}
       .eye{
         right:5px;
         bottom:8px;

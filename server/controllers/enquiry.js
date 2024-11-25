@@ -15,9 +15,11 @@ auth:{
 user:process.env.EMAIL_ID,
 pass:process.env.APPPWD,
 },
-tls:{
-    rejectUnauthorized: false, // Allow self-signed certificates
-}})
+// tls:{
+//     rejectUnauthorized: false, // Allow self-signed certificates
+// }
+
+})
 
 try {
         // Send mail
