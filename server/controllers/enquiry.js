@@ -8,48 +8,16 @@ exports.Enquiry = async(req,res)=>{
 
 const {name,phone,email,service,message}= req.body;
 
+let transporter = nodemailer.createTransport({
 
-// var smtpTransport = nodemailer.createTransport(smtpTransport({
-//   //service:'gmail',
-//   auth:{
-//   user:process.env.EMAIL_ID,
-//   pass:process.env.APPPWD,
-//   port: 587,
-//   },
-//   tls:{
-//       rejectUnauthorized: false, // Allow self-signed certificates
-//   },
-//   secureConnection: false, // TLS requires secureConnection to be false
-//        port: 587,
-//        host: "smtp-mail.outlook.com",
-// }));
-
-
-var transporter = nodemailer.createTransport({
-  host: "smtp-mail.outlook.com", // hostname
- secureConnection: false, // TLS requires secureConnection to be false
- port: 587, // port for secure SMTP
-tls: {
-  ciphers:'SSLv3'
+service:'gmail',
+auth:{
+user:process.env.EMAIL_ID,
+pass:process.env.APPPWD,
 },
-auth: {
-  user:process.env.EMAIL_ID,
-  pass:process.env.APPPWD,
-  }
-});
-
-// let transporter = nodemailer.createTransport({
-
-// service:'gmail',
-// auth:{
-// user:process.env.EMAIL_ID,
-// pass:process.env.APPPWD,
-// },
-// tls:{
-//     rejectUnauthorized: false, // Allow self-signed certificates
-// }
-
-// })
+tls:{
+    rejectUnauthorized: false, // Allow self-signed certificates
+}})
 
 try {
         // Send mail
@@ -77,7 +45,7 @@ await transporter.sendMail({
 } catch (error) {
   console.log("Email Send Error", error);
   res.status(500).json({
-    message: 'Error Sending Mail',error
+    message: 'Error Sending Mail',
   });
 }
 }
