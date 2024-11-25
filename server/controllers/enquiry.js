@@ -15,9 +15,9 @@ auth:{
 user:process.env.EMAIL_ID,
 pass:process.env.APPPWD,
 },
-// tls:{
-//     rejectUnauthorized: false, // Allow self-signed certificates
-// }
+tls:{
+    rejectUnauthorized: false, // Allow self-signed certificates
+}
 
 })
 
@@ -47,7 +47,7 @@ await transporter.sendMail({
 } catch (error) {
   console.log("Email Send Error", error);
   res.status(500).json({
-    message: 'Error Sending Mail',
+    message: 'Error Sending Mail',error
   });
 }
 }
