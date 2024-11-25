@@ -26,7 +26,7 @@ const PannelNavbar = () => {
   const Menu = [
     { color: "#D0AB17", path: "/admin", icon: <IoHome size={24} />, name: "Dashboard" },
     { color: "#D0AB17", path: "/admin/banner", icon: <IoHome size={24} />, name: "Banner" },
-    { color: "#D0AB17", path: "/admin/packages-details", icon: <BiSolidOffer size={24} />, name: "Packages" },
+    { color: "#D0AB17", path: "/admin/package-details", icon: <BiSolidOffer size={24} />, name: "Packages" },
     { color: "#D0AB17", path: "/admin/gallery-details", icon: <MdOutlineFlightTakeoff size={24} />, name: "Gallery" },
     { color: "#D0AB17", path: "/", icon: <FaHeadphonesAlt size={24} />, name: "Go to website" },
   ];

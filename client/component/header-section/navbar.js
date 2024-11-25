@@ -21,6 +21,7 @@ export default function Navbar() {
   const Menu = [
     { color: "#D0AB17", path: "/", icon: <IoHome size={24} />, name: "Home" },
     { color: "#D0AB17", path: "/package", icon: <BiSolidOffer size={24} />, name: "Packages" },
+    { color: "#D0AB17", path: "/gallery", icon: <BiSolidOffer size={24} />, name: "Gallery" },
     { color: "#D0AB17", path: "/service", icon: <MdOutlineFlightTakeoff size={24} />, name: "Services" },
     { color: "#D0AB17", path: "/", icon: <FaUserLarge size={24} />, name: "Guidance" },
     { color: "#D0AB17", path: "/contact", icon: <FaHeadphonesAlt size={24} />, name: "Contact Us" },
