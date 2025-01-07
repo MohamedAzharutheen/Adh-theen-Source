@@ -5,7 +5,7 @@ import React from 'react'
 export default function Journey() {
   return (
     <>
-    <section className='journey-bg mt70 pdtb50'>
+    <section className='journey-bg mt70 mmt40 '>
         <div className='container'>
           <div className='row'>
             <div className='col-12 col-md-12 col-lg-6'>
@@ -18,7 +18,7 @@ export default function Journey() {
                 <p className='fs-19 lnh33 mfs-14 mlnh27 mt-3 drk-clr'>Looking ahead, Ath-Theen will transform your pilgrimage by allowing you to arrange visits to notable sites, find transportation, design personalized agendas, and utilize essential on-ground tools like the Tawaf tracker and much more!</p>
                <div className='mt-4 df gap20'>
              <Link href={"/package"}>  <button className='enquiry-btn  cw fs-19 mfs-16 fw5'>Our Packages</button> </Link>
-               <Link href={"tel: 8124289972"}> <button className='enquiry-btn fs-19 mfs-16 cw drk-clr fw5'>Get Instant Call</button> </Link>
+               <Link href={"tel:+919500771134"}> <button className='enquiry-btn fs-19 mfs-16 cw drk-clr fw5'>Get Instant Call</button> </Link>
                </div>
             </div>
           </div>

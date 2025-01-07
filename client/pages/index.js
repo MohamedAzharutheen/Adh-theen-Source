@@ -11,7 +11,6 @@ import PackageCard from '@/component/packages/package-card'
 import ServiceCards from '@/component/services/service-cards'
 import Testimonial from '@/component/slider/testmonial'
 import WeFeelHappy from '@/component/we-feel-happy'
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
 
@@ -56,10 +55,10 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Ath-Theen Hajj and Umrah Services",
-  "url": "https://www.yourwebsite.com",
+  "url": "https://www.aththeen.in",
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+91-1234567890",
+    "telephone": "+91 950077 1134",
     "contactType": "Customer Service",
     "areaServed": "IN",
     "availableLanguage": ["en", "ta"]
@@ -75,9 +74,9 @@ const schema = {
        <NextSeoModel
         title="Best Hajj and Umrah Services | Affordable Packages"
         description="Experience a seamless Hajj and Umrah journey with our trusted and affordable pilgrimage services. Discover tailored packages and personalized support for every step of your spiritual trip."
-        url="https://www.yourwebsite.com/"
+        url="https://www.aththeen.in"
         keywords="best hajj service in tamilnadu,best umrah service in chennai,best umrah service in tamilnadu,best umrah service in tamilnadu,best umrah service in tamilnadu,cheapest month for umrah,cheapest umrah package from india, Umrah services, affordable pilgrimage packages, Islamic travel services, trusted pilgrimage organizers"
-        imageUrl="https://www.yourwebsite.com/images/hajj-umrah-banner.jpg"
+        imageUrl="/assets/images/banner/hajj.png"
         schema={schema}
       />
     <Layout>

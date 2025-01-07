@@ -54,7 +54,7 @@ handleFormPopup=()=>{
     <section className='bg-img mt70'>
         <div className='container'>
             <h1 className='fs-33 tac fwb'>Welcome to <span className='logo-clr fwb'> Adh-Theen </span> Hajj and Umrah Services!</h1>
-            <p className='fs19 lnh33 ls025 mt-4'>At Ath-Theen, we are dedicated to providing a comprehensive and enriching experience for pilgrims embarking on their spiritual journey of Hajj and Umrah. <strong>Since our inception in 2008 </strong>, we have successfully assisted thousands of individuals and families in fulfilling their religious obligations with ease and comfort.</p>
+            <p className='fs-19 mfs-16 mt-4'>At Ath-Theen, we are dedicated to providing a comprehensive and enriching experience for pilgrims embarking on their spiritual journey of Hajj and Umrah. <strong>Since our inception in 2008 </strong>, we have successfully assisted thousands of individuals and families in fulfilling their religious obligations with ease and comfort.</p>
             <div className='df fjsb fac fw mfdc tfdc '>
                  
                  {/* content Div */}
@@ -83,17 +83,17 @@ handleFormPopup=()=>{
                     <div className='df fjse  mfw '>
                        <div className=''>
                         <p className={`fs-24 mfs-19 tac fwb`}>3900+</p>
-                        <p className={`fs-24 mfs-16 pdt20 mpdt10 `}>Satisfied Pilgrims</p>
+                        <p className={`fs-22 mfs-16 pdt20 mpdt10 `}>Satisfied Pilgrims</p>
                         </div> 
                         <div className='line'></div>
                         <div className=''>
                         <p className={`fs-24 mfs-19 tac fwb`}>100%</p>
-                        <p className={`fs-24 mfs-16 pdt20 mpdt10 `}>Client Satisfaction</p>
+                        <p className={`fs-22 mfs-16 pdt20 mpdt10 `}>Client Satisfaction</p>
                         </div> 
                         <div className='line'></div>
                         <div className=''>
                         <p className={`fs-24 mfs-19 tac fwb`}>3500+</p>
-                        <p className={`fs-24 mfs-16 pdt20 mpdt10 `}>Journey Facilitated</p>
+                        <p className={`fs-22 mfs-16 pdt20 mpdt10 `}>Journey Facilitated</p>
                         </div> 
                         
                     </div>

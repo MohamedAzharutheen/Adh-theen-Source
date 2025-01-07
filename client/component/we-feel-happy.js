@@ -83,7 +83,7 @@ export default function WeFeelHappy() {
               <div className='df fjc mt-3'>
            <div className='help-circle tac '>
               <Ri24HoursLine size={60} color='#000000'/>
-              <p className={`fs-14 cb fwb`}>24/7 Support <br/> 8124289972</p>
+              <p className={`fs-14 cb fwb`}>24/7 Support <br/> +91 950077 1134</p>
               </div>
               </div>
               </ScrollAnimation>

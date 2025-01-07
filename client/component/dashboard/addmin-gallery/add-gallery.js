@@ -426,6 +426,8 @@ import 'react-toastify/dist/ReactToastify.css';
            
               
               </button>
+              {isEditing &&    <button type="submit" onClick={handlePopup} className='btn-add cw fs-16 fw6 mt-3'>Cancel</button> }
+         
               </div>
               </form>
             </div>

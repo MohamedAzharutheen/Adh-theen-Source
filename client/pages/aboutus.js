@@ -23,9 +23,9 @@ export default function Aboutus() {
      <NextSeoModel
         title="About Us | Hajj and Umrah Experts Since 2008"
         description="Learn about our mission to provide seamless Hajj and Umrah experiences since 2008. Trusted by thousands of pilgrims for our dedication and spiritual expertise."
-        url="https://www.yourwebsite.com/about"
+        url="https://www.aththeen.in/about"
         keywords="Best Hajj services,Best Umrah experts, pilgrimage organizers,Best Islamic travel,best umrah affordable package"
-        imageUrl="https://www.yourwebsite.com/images/about-us.jpg"
+        imageUrl="/assets/images/aboutus/about-blog.jpg"
         schema={schema}
       />
     <Layout>

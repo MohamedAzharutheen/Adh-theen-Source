@@ -24,8 +24,8 @@ export default function CategorySection() {
     <>
     <section className='bg-clr'>
        <div className='container-fluid'>
-          <h4 className={`fs-33 mfs24 ls05 tac fwb`}>Additional Factors that Differentiate Packages</h4>
-          <p className={`fs-16 mfs14 ls05 lnh27 tac pdt8 `}>In addition to the previously outlined main factors, there are additional considerations that affect the selection and differentiation of Hajj packages.</p>
+          <h4 className={`fs-33 mfs-24 tac fwb`}>Additional Factors that Differentiate Packages</h4>
+          <p className={`fs-16 mfs-14 tac pdt8 `}>In addition to the previously outlined main factors, there are additional considerations that affect the selection and differentiation of Hajj packages.</p>
         <div className='tabs-container'> 
          <div className='df fjse mgap20'>
          {tabs.map((items,index)=>{

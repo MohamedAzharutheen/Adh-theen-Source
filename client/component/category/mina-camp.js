@@ -18,14 +18,14 @@ export default function MinaCamp() {
     <>
     <section className='container-fluid'>
        <h6 className={`fs-24 pdt24 tac`}>Mina Camp – An Essential Stop on Your Hajj Journey with Ath-Theen</h6>
-    <p className='fs18 mfs16 lnh33 ls05 drk-clr  fw5 pdt16'>At Ath-Theen, we are committed to providing a spiritually fulfilling and comfortable experience for pilgrims during Hajj. Our Mina camp offers the perfect blend of essential services and spiritual serenity, ensuring that your stay is smooth and focused on worship. Here’s what you can expect at Mina with Ath-Theen.</p>
+    <p className='fs-16 mfs-14 drk-clr fw5 pdt16'>At Ath-Theen, we are committed to providing a spiritually fulfilling and comfortable experience for pilgrims during Hajj. Our Mina camp offers the perfect blend of essential services and spiritual serenity, ensuring that your stay is smooth and focused on worship. Here’s what you can expect at Mina with Ath-Theen.</p>
     <div className='row mt-2 mt-lg-5 align-items-center '>
         <div className='col-12 col-md-6 col-lg-6 '>
             {MinaData.map((items,index)=>{
                 return(
             <div className='mt24' key={index}>
-            <h5 className='fs-22 mfs-19 drk-vclr fw5'>{items.heading}</h5>
-            <p className='fs16 lnh27 ls05 mfs14 drk-clr fw5 pdt16 mpdt10'>{items.cnt}</p>
+            <h5 className='fs-22 mfs-19 drk-vclr fw7'>{items.heading}</h5>
+            <p className='fs-16 mfs-14 drk-clr fw5 pdt16 mpdt10'>{items.cnt}</p>
         </div>
         )
     })}

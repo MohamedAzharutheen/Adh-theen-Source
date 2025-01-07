@@ -16,7 +16,7 @@ const Guidance = ({timelineItems}) => {
                             className="vertical-timeline-element--hajj"
                             contentStyle={{ background: '#fff', color: '#333',}}
                             contentArrowStyle={{ borderRight: '7px solid #fff' }}
-                            date={<span className='green-clr fwb fs24 mfs-19 ' style={{ color: '' }}>{item.date}</span>}
+                            date={<span className='green-clr fwb mfs-19 ' style={{ color: '' }}>{item.date}</span>}
                         >
                             <h2 className="vertical-timeline-element-date " style={{textAlign:'justify',color:"#6D6D6D",}}>{item.cnt}</h2>
                             <img src={item.imageUrl} alt={item.title} style={{ width: '100%', borderRadius: '5px' }} />

@@ -21,33 +21,51 @@ time, mark, audio, video {
 }
 
 @font-face {
-	font-family: 'Playfair Display';
-	src: url('/fonts/PlayfairDisplay-Regular.woff2') format('woff2'),
-		 url('/fonts/PlayfairDisplay-Regular.woff') format('woff');
-	font-weight: 400; /* Normal weight */
-	font-style: normal; /* Normal style */
+	font-family: 'Nunito';
+	src: url('/fonts/Nunito-Regular.woff2') format('woff2'),
+		 url('/fonts/Nunito-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
   }
   
-  /* Importing Playfair Display Bold */
-  @font-face {
-	font-family: 'Playfair Display';
-	src: url('/fonts/PlayfairDisplay-Bold.woff2') format('woff2'),
-		 url('/fonts/PlayfairDisplay-Bold.woff') format('woff');
-	font-weight: 700; /* Bold weight */
-	font-style: normal; /* Normal style */
+ @font-face {
+	font-family: 'Nunito';
+	src: url('/fonts/Nunito-Medium.woff2') format('woff2'),
+		 url('/fonts/Nunito-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
   }
+  
+  @font-face {
+	font-family: 'Nunito';
+	src: url('/fonts/Nunito-SemiBold.woff2') format('woff2'),
+		 url('/fonts/Nunito-SemiBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+  } 
+  
+  @font-face {
+	font-family: 'Nunito';
+	src: url('/fonts/Nunito-Bold.woff2') format('woff2'),
+		 url('/fonts/Nunito-Bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+  }
+ 
+  @font-face {
+	font-family: 'Nunito';
+	src: url('/fonts/Nunito-ExtraBold.woff2') format('woff2'),
+		 url('/fonts/Nunito-ExtraBold.woff') format('woff');
+	font-weight: 800;
+	font-style: normal;
+  } 
 
-
-/* p,span,li,ol,ul{
-    font-family: 'sans-serif';	
-	font-family: 'Montserrat';
-} */
 *{
     margin: 0;
     padding: 0;
     font-weight: 400;
     /* font-family: 'Poppins', sans-serif; */
-	font-family: "Playwrite DE Grund", cursive;
+	font-family: 'Nunito', Arial, sans-serif;
     text-decoration: none;
     outline: none;
     list-style: none;
@@ -55,7 +73,7 @@ time, mark, audio, video {
 }
 body {
   line-height: 1.2;
-  font-family: 'Playwrite DE Grund', sans-serif;
+  font-family: 'Nunito', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 15px;
   color: #000;
@@ -1281,8 +1299,24 @@ a{
 .fwb400{
 	font-weight: 400;
 }
+
+.fw4{
+	font-weight: 400;
+}
+.fw5{
+	font-weight: 500;
+}
+.fw6{
+	font-weight: 600;
+}
+.fw7{
+	font-weight: 700;
+}
+.fw8{
+	font-weight: 800;
+}
 .fwb{
-	font-weight: bold;
+	font-weight: bold !important;
 }
 
 .ws10{

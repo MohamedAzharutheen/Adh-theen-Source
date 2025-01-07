@@ -36,7 +36,7 @@ export default function ValuableClient() {
            <h6 className={`fs-24 mfs-19 tac`} > <span className="logo-clr">{items.heading.split(' ')[0]} </span>
                     {items.heading.split(' ').slice(1).join(' ')}
                   </h6>
-           <p className={`fs14 lnh27 ls04 mfs-14 pdt16 mpdt10 taj`}>{items.cnt}</p>
+           <p className={`fs-14 mfs-14 pdt16 mpdt10 taj`}>{items.cnt}</p>
         </div>
  
         </div>

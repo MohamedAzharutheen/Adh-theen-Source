@@ -28,7 +28,7 @@ export default function Subscripe() {
                                     <form className="subscribe-form sub-form-2">
                                         <input className='fs-19 fwb ls05' type="text" readOnly placeholder="Get It Instant Call "/>
                                     </form>
-                                 <Link href={"tel:950077 1134"}>   <button className="sub_btn">Call Now</button> </Link>
+                                 <Link href={"tel:+919500771134"}>   <button className="sub_btn">Call Now</button> </Link>
                                 </div>
                             </div>
                         </div>

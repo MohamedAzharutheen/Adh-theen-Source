@@ -7,6 +7,7 @@ export default function Contact() {
   return (
     <>
        <Layout>
+        
         <Address/>
 
        </Layout>

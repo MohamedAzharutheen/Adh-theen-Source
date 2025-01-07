@@ -43,7 +43,7 @@ export default function TopHeader() {
               <Link href="tel:+91 81242 89972"><p className="fs-12 fw6">+91 950077 1134</p></Link>
               </div>
           </div>
-        {/* <Link href={"/"}><p className='fs-14 fwb '>Contact Us :  <span className='fs-12 fw6 pdl5'> <FaPhoneVolume size={20} color='#4CAF50'/> +91 8124289972</span> </p></Link> */}
+        {/* <Link href={"/"}><p className='fs-14 fwb '>Contact Us :  <span className='fs-12 fw6 pdl5'> <FaPhoneVolume size={20} color='#4CAF50'/> +91 +91 950077 1134</span> </p></Link> */}
         <Link href={"/"}><p className='fs-14 fwb df fac gap5'>Social Media:
          {SociaIcons.map((items,index)=>(
               <span key={index} className={`df gap8 pdl16 ${items.name}`}>{items.icon}</span> ))} </p></Link>

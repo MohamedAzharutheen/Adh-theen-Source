@@ -7,10 +7,10 @@ export default function HajjGateway() {
   <div className="overlay"></div>
   <div className='container df fac '>
     <div className='content col-12 col-lg-6'>
-    <h2 className='fs-40 mfs-24 fw7 cw'> <span className="logo-clr fwb"> Ath-Theen </span> Hajj </h2>
-    <p className='fs22 ls025 mfs-19 cw fw5 pdt16'>Your Gateway to Unforgettable Adventures Awaits!</p>
-    <p className='fs16 lnh27 ls05 mfs14 cw fw5 pdt24'>Step into a world of limitless possibilities with us. Your adventure starts here, where every journey is crafted just for you. Let us be your guide to unforgettable experiences!.</p>
-    <div className='mt-5 df gap24 fw mfjc'>
+    <h2 className='fs-32 mfs-24 fw7 cw'> <span className="logo-clr fwb"> Ath-Theen </span> Hajj </h2>
+    <p className='fs-22 mfs-19 cw fw5 pdt16 mpdt10'>Your Gateway to Unforgettable Adventures Awaits!</p>
+    <p className='fs-16 mfs-14 cw pdt24 mpdt10'>Step into a world of limitless possibilities with us. Your adventure starts here, where every journey is crafted just for you. Let us be your guide to unforgettable experiences!.</p>
+    <div className='mt-3 mt-lg-5 df gap24 fw mfjc'>
     <button className='reg-btn pd10 fs-16 fwb '>Start Registration</button>
     <button className='enq-btn fs-16 pd10 cw fwb'>Register Assistance</button>
     </div>

@@ -13,7 +13,7 @@ export default function RoomType() {
     <>
       <section className='mt-4'>
         <div className='container-fluid'>
-          <p className='fs18 mfs-14 mlnh27  lnh33 ls05 drk-clr'>
+          <p className='fs-16 mfs-14 drk-clr'>
             Due to the high demand for accommodations in Makkah and Madinah during the Hajj season, accommodation services may differ from other times of the year. Some service providers may offer single rooms. However, the majority of rooms will be offered on a sharing basis. Packages will include a single bed in a shared room, which may vary between double, triple, or quadruple rooms. Service providers will make an effort to accommodate rooming preferences to the best of their ability. However, it should be noted that the selection of roommates is not guaranteed.
           </p>
 

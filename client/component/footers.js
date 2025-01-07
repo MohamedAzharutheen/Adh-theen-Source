@@ -39,7 +39,7 @@ export default function Footers() {
                 
                 <h5 className={`fs-19 fw6 cw `}>More Enquiry</h5>
                 </div>
-               <p className={`fs-14 dim-whit fw4 pdt13 mpdt5`}>+91 8124 2899 72 </p>
+               <p className={`fs-14 dim-whit fw4 pdt13 mpdt5`}>+91 95 00 77 11 34 </p>
                <div className='df  gap8 pdb10 mt12'>
                <MdEmail size={24} className='dim-ylw'/>
                 
@@ -87,8 +87,8 @@ export default function Footers() {
             </div>
           <div className='df fjse fw pdtb10'>
           
-          <p className="fs10 ls05 dim-whit ls05 mtac">  ©Copyright {currentYear} Worldwide Travel & Tourism - All rights reserved </p>
-          <Link href="http://luzosacreations.in/"> <p className="fs10 dim-whit ls05 mpdt5">  Design And Developed By <span className='tau' > Luzosacreations </span></p> </Link>
+          <p className="fs-12 ls05 dim-whit ls05 mtac fw5">  © Copyright {currentYear} Worldwide Travel & Tourism - All rights reserved </p>
+          <Link href="http://luzosacreations.in/"> <p className="fs-12 dim-whit mpdt5 fw5">  Design And Developed By <span className='tau' > Luzosacreations </span></p> </Link>
 
           </div>
       </div>

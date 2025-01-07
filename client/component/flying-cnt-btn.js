@@ -5,7 +5,7 @@ import React from 'react'
     return (
     <>
     <section>
-        <Link href={"tel:+91 8124289972"}>
+        <Link href={"tel:+91 +91 950077 1134"}>
         <div className='enq-btn df  fjc gap5'>
         <MdLocalPhone size={16} color='#fff'/>
         <p className={`fs-12 cw tac  `}>Schedule A Call</p>

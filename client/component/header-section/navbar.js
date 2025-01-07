@@ -64,7 +64,7 @@ export default function Navbar() {
                     </motion.div>
                 )}
               </div>
-            <Link href={"/contact"}><button className='fs-16 fwb btn-cnt cw'>Contact Us</button></Link>
+            <Link href={"/contact"}><button style={{border:"none"}} className='fs-16 fwb btn-cnt cw'>Contact Us</button></Link>
           </div>
 
           <div className='mdf fjsb fac dn mdb'>
@@ -136,6 +136,7 @@ export default function Navbar() {
         padding: 10px 20px;
         border-radius: 8px;
         transition: all 0.3s 
+        border: none !important;
         }
         @media only screen and (max-width: 1023px) {
                 .header {

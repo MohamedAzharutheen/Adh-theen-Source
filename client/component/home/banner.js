@@ -22,9 +22,9 @@ export default function Banner() {
    <div className='df fjsa fac  pdt40 mfdc '>
     <div className='w50p mw100p mb40'>
     <ScrollAnimation direction="left" delay={0.1}>
-      <h4 className={`fs-33 lnh55  fwb`}>Book Your <span className='green-clr fwb '> Hajj & Umrah </span>  with Our Trusted Service</h4>
+      <h4 className={`fs-32 mfs-24  fwb`}>Book Your <span className='green-clr fwb '> Hajj & Umrah </span>  with Our Trusted Service</h4>
 
-      <p className={`fs19 lnh33 mfs16 mlnh27 mt32`}>Embark on a sacred journey to Makkah and Madinah with <strong> Ath-Theen </strong> all-inclusive Hajj and Umrah packages. Experience the profound spirituality of performing the rituals in the heart of Islam's holiest cities, with expert guidance and personalized services from <strong> Ath-Theen </strong> ensuring a smooth, fulfilling pilgrimage.</p>
+      <p className={`fs-19 mfs-16 mt32`}>Embark on a sacred journey to Makkah and Madinah with <strong> Ath-Theen </strong> all-inclusive Hajj and Umrah packages. Experience the profound spirituality of performing the rituals in the heart of Islam's holiest cities, with expert guidance and personalized services from <strong> Ath-Theen </strong> ensuring a smooth, fulfilling pilgrimage.</p>
       <div className="mt50">
          <button onClick={handleClick} className={` btn-box cursor fs-16 cw`}>Reach Out to Us</button> 
        </div>

@@ -178,7 +178,7 @@ const ZigzagTimeline = () => {
     {`
     .jSOuST {
     color: #000;
-    font-size: 19px !important;
+    font-size: 28px !important;
     font-weight: 600;
     margin: 0;
     text-align: left;
