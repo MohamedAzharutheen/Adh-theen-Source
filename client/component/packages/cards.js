@@ -98,7 +98,7 @@ export default function Cards({packageData}) {
    <style jsx>
     {`
 .pkg-name{
-height: 100px;
+height: auto;
 }
         .mega-hover {
 	position: relative;

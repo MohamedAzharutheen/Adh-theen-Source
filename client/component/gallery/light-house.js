@@ -75,7 +75,7 @@ export default function Gallery() {
         <Lightbox
           index={lightboxIndex}
           slides={slides} // Pass slides array to Lightbox
-          open={lightboxIndex >= 0}
+          open={lightboxIndex >=0}
           close={() => setLightboxIndex(-1)}
         />
       </div>
