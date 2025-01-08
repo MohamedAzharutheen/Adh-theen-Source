@@ -87,7 +87,7 @@ const nextConfig = {
     domains: ['res.cloudinary.com'], // Add Cloudinary's domain here
   },
   env: {
-    url: prod ? "https://api.mamakkitchen.com/api" : "http://localhost:5000",
+    url: prod ? "https://api.mamakkitchen.com" : "http://localhost:5000",
     dev: !prod,
     phoneDis: "+91 950077 1134",
     phoneNum: "+91 9500771134",
