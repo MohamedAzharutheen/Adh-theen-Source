@@ -87,7 +87,7 @@ const nextConfig = {
     domains: ['res.cloudinary.com'], // Add Cloudinary's domain here
   },
   env: {
-    url: prod ? "https://adh-theen-source.vercel.app" : "http://localhost:5000",
+    url: prod ? "https://api.mamakkitchen.com/api" : "http://localhost:5000",
     dev: !prod,
     phoneDis: "+91 950077 1134",
     phoneNum: "+91 9500771134",
@@ -101,7 +101,7 @@ const nextConfig = {
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin",   value: prod
-           ?  "https://adh-theen-frontnend.vercel.app/" // ? "https://adh-theen-frontend.vercel.app"
+           ?  "https://www.mamakkitchen.com/" // ? "https://www.mamakkitchen.com/"
             : "http://localhost:8080", },
           { key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
           { key: "Access-Control-Allow-Headers", value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" },
