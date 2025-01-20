@@ -29,7 +29,7 @@ export default function WeFeelHappy() {
         <div className='row mt-1  mt-lg-5'>
            <div className='col-12 col-lg-6'>
            <ScrollAnimation direction="top" delay={0.4}>
-            <h4 className={`fs-24 mfs-19  fw7 green-clr`}><span className='logo-clr fw7'> We Feel Happy </span> To Help You</h4>
+            <h1 className={`fs-24 mfs-19  fw7 green-clr`}><span className='logo-clr fw7'> Best Umrah Service  </span> in Tirunelveli</h1>
             </ScrollAnimation>
             <ScrollAnimation direction="left" delay={0.6}>
             <p className={`fs19 lh33 mfs-16  mt16  pdt20`}>We take great pride in assisting our clients. Our team is dedicated to providing the best service possible. Your satisfaction is our top priority. Every inquiry is an opportunity for us to serve you better. We value the trust you place in us. Helping you is what drives our passion.</p>

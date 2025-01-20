@@ -72,7 +72,7 @@ const schema = {
   return (
     <>
        <NextSeoModel
-        title="Best Hajj and Umrah Services | Affordable Packages"
+        title="Best Umrah Service in Tirunelveli"
         description="Experience a seamless Hajj and Umrah journey with our trusted and affordable pilgrimage services. Discover tailored packages and personalized support for every step of your spiritual trip."
         url="https://www.aththeen.in"
         keywords="best hajj service in tamilnadu,best umrah service in chennai,best umrah service in tamilnadu,best umrah service in tamilnadu,best umrah service in tamilnadu,cheapest month for umrah,cheapest umrah package from india, Umrah services, affordable pilgrimage packages, Islamic travel services, trusted pilgrimage organizers"

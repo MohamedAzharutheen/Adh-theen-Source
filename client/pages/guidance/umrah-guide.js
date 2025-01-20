@@ -1,5 +1,6 @@
 import Guidance from '@/component/guidance/guide';
 import Layout from '@/component/layout';
+import NextSeoModel from '@/component/nextseomodel';
 import React from 'react'
 
 export default function UmrahGuide() {
@@ -52,10 +53,37 @@ export default function UmrahGuide() {
             imageUrl: '/assets/images/guide/ihram-.svg' // Replace with your image URL
         },
     ];
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ath-Theen Hajj and Umrah Services",
+        "url": "https://www.aththeen.in",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91 950077 1134",
+          "contactType": "Customer Service",
+          "areaServed": "IN",
+          "availableLanguage": ["en", "ta"]
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",            // Average rating value
+          "reviewCount": "1292"             // Total number of ratings
+        }
+      }
   return (
     <>
+           <NextSeoModel
+        title="Umrah Guide - Step-by-Step How to Perform Umrah"
+        description="Learn how to perform Umrah with this comprehensive step-by-step guide. Discover key rituals, tips, and essential information for a spiritual journey."
+        url="https://www.aththeen.in"
+        keywords="umrah guide,umrah guide book,best umrah guide,best umrah service in tamilnadu,best umrah service in tamilnadu,cheapest month for umrah,cheapest umrah package from india, Umrah services, affordable pilgrimage packages, Islamic travel services, trusted pilgrimage organizers"
+        imageUrl="/assets/images/banner/hajj.png"
+        schema={schema}
+      />
+   
    <Layout>
-        <h4 className='fs-24 tac mt40'>Umrah Guidance</h4>
+        <h1 className='fs-24 mfs-19 tac mt40'>Umrah Guide</h1>
         <Guidance timelineItems={timelineItems}/>
     </Layout>
 

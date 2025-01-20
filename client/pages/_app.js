@@ -3,6 +3,7 @@ import '@/styles/globals.css'; // Your global styles
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import { useEffect } from 'react';
 import { NextUIProvider } from '@nextui-org/react';
+import GoogleTranslatePage from '@/component/google-translate-button';
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
@@ -12,7 +13,9 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   return (
+
     <NextUIProvider>
+      <GoogleTranslatePage/>
       <Component {...pageProps} />
     </NextUIProvider>
   );
