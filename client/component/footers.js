@@ -79,7 +79,7 @@ export default function Footers() {
           <Link href={"/package"}>    <li className={`fs-14 dim-whit fw5`}>Packages</li></Link>
           </ul>
             <div className="df gap11 mmt12 ">
-           <Link href=""> <IoLogoWhatsapp className="dim-whit wb cursor" size={20}/> </Link>
+           <Link href="https://wa.me/+918838504118"> <IoLogoWhatsapp className="dim-whit wb cursor" size={20}/> </Link>
            <Link href="">  <FaFacebook  className="dim-whit fb cursor" size={20}/> </Link>
            <Link href="">  <AiFillInstagram className="dim-whit insta cursor" size={20}/> </Link>
            <Link href="">  <MdMarkEmailUnread className="dim-whit mail cursor" size={20}/> </Link>

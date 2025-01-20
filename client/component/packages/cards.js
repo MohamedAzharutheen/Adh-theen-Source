@@ -13,7 +13,7 @@ export default function Cards({packageData}) {
   return (
    <>
    <section className="mt70 container mb40">
-      <h4 className="fs-33 mfs24 mlnh41 ls1 fw7 tac">Umrah &Hajj Packages 2024-2025</h4>
+      <h1 className="fs-33 mfs24 mlnh41 ls1 fw7 tac">Best Umrah Packages</h1>
       <p className="fs-16 dim-clr pdt24 tac">We provide you with a wide range of Umrah packages from all over India.</p>
    
    <div className="row mt-5">
@@ -50,19 +50,16 @@ export default function Cards({packageData}) {
             <div className="place-area mt32">
                <ul className="place-list text-animation">
                 <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
+                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Food & Accomondation </Link> <FaArrowRight size={14} className="dim-clr" />
                 </li>
                 <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
+                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Visa </Link> <FaArrowRight size={14} className="dim-clr" />
                 </li>
                 <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
+                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Insurance </Link> <FaArrowRight size={14} className="dim-clr" />
                 </li>
                 <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
+                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Flight Ticket </Link> <FaArrowRight size={14} className="dim-clr" />
                 </li>
                 </ul>  
             </div>
@@ -73,7 +70,9 @@ export default function Cards({packageData}) {
                 </div>
                 <p className="fs-12 fw4 text-capitalize dim-clr pdt20">Per Person</p>
                 <div className="pdl16 mt16">
+                <Link href={"tel:+919500771134"}>
                     <button className="fs-14 fw5 cw book-now-btn ">Book Now</button>
+                </Link>
                 </div>
             </div>
            </div>

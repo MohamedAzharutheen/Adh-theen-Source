@@ -44,7 +44,7 @@ export default function EnquiryBtn() {
               </Link>
             </div>
             <div className="sub-icon" style={{ transitionDelay: '0.3s' }}>
-              <Link legacyBehavior href={`https://wa.me/8838504118`} passHref rel="noopener noreferrer">
+              <Link legacyBehavior href={`https://wa.me/+918838504118`} passHref rel="noopener noreferrer">
                 <a target="blank">
                   <BsWhatsapp size={24} color="#FFFFFF" />
                 </a>
