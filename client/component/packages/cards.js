@@ -14,7 +14,7 @@ export default function Cards({packageData}) {
    <>
    <section className="mt70 container mb40">
       <h1 className="fs-33 mfs24 mlnh41 ls1 fw7 tac">Best Umrah Packages</h1>
-      <p className="fs-16 dim-clr pdt24 tac">We provide you with a wide range of Umrah packages from all over India.</p>
+      <p className="fs-16 dim-clr pdt24 tac">We provide you with a wide range of Hajj & Umrah packages from all over India.</p>
    
    <div className="row mt-5">
    <div className="col-12 col-md-12 col-lg-8">

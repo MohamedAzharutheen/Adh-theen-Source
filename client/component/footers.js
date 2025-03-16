@@ -45,13 +45,13 @@ export default function Footers() {
                 
                 <h5 className={`fs-19 fw6 cw `}>Send Mail</h5>
                 </div>
-                <p className={`fs-16 dim-whit fw4 `}>info@luzosa.in</p>
+                <p className={`fs-16 dim-whit fw4 `}>aldeentoursandtravels@gmail.com</p>
                 <div className='df  gap8 pdb10 mt16 mmt24'>
                 <FaLocationArrow size={24} className='dim-ylw'/>
                 
                 <h5 className={`fs-19 fw6 cw `}>Address</h5>
                 </div>
-                <p className={`fs-16 dim-whit fw4 `}>Mealapalayam Tirunelvelei-627005</p>
+                <p className={`fs-16 dim-whit fw4 `}>9, Anna Veethi, Melapalayam, Tirunelveli, Tamil Nadu 627005</p>
               
             </div>
             <div className='col-12 col-lg-2 mpdt  '>
@@ -59,7 +59,7 @@ export default function Footers() {
             <p className='fs-16 lnh27 dim-whit fw4 pdt16 mpdt5 '>Connect with us for all your Hajj and Umrah needs. Ath-Theen is dedicated to guiding you every step of the way!</p>
             </div>
             <div className='col-12 col-lg-3 google-map'>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.906062180957!2d77.70791197399276!3d8.700470594047102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b041320431936e5%3A0x73e81c295eb83a69!2sLuzosa%20creations!5e0!3m2!1sen!2sin!4v1728649676215!5m2!1sen!2sin"  
+            <iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d7887.73660968696!2d77.7080633!3d8.7040543!3m2!1i1024!2i768!4f13.1!2m1!1saldheen%20melapalayam!5e0!3m2!1sen!2sin!4v1742025847790!5m2!1sen!2sin"  
               allowFullScreen 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"></iframe>

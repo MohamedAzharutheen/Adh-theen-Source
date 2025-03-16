@@ -81,7 +81,7 @@ finally{
         <div className='form-center '>
           <div className={`form-box`}>
             <div className='form-rad-box'>
-              <h6 className={`fs-19 mfs-14 cw `}>Begin Your Spiritual Journey: Hajj Registration Open</h6>
+              <h6 className={`fs-19 mfs-14 cw fw7`}>Book Your Hajj & Umrah Package <br/> With Our Trusted Services</h6>
               <div className="icon-pos cursor" onClick={close} >
              <IoCloseSharp className="fwb" size={24} color='#000'/>
              </div>
