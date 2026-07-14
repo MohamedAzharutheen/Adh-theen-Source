@@ -16,7 +16,7 @@ exports.addPackage = async (req,res)=>{
 exports.getPackage = async (req,res) => {
  
   try {
-   const package = await  PackageData.find({});
+   const packages = await PackageData.find().sort({ createdAt: -1 });
    res.status(200).json(package); 
   } catch (error) {
     res.status(400).json({error: error.message})
