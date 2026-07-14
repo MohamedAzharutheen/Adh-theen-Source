@@ -13,16 +13,15 @@ exports.addPackage = async (req,res)=>{
 }
 
 
-exports.getPackage = async (req,res) => {
- 
+exports.getPackage = async (req, res) => {
   try {
-   const packages = await PackageData.find().sort({ createdAt: -1 });
-   res.status(200).json(package); 
-  } catch (error) {
-    res.status(400).json({error: error.message})
-  }
+    const packages = await PackageData.find().sort({ createdAt: -1 });
 
-}
+    res.status(200).json(packages);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
 
 
 exports.updatePackage = async (req,res) =>{
