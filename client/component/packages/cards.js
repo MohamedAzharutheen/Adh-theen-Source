@@ -31,7 +31,7 @@ export default function Cards({packageData}) {
 
             <Image className=" pos-r" style={{width:"100%" }} src={items.Image} width={390} height={242} alt={`-Image`} loading="lazy" quality={100}/>
 
-             <p className="image-title fs-16  ">{moment(items.Depature).format('Do MMM')}</p>
+             <p className="image-title fs-16  ">{moment(items.Depature).format('Do MMM YYYY')}</p>
              {/* <div className="days">
                <h6 className=""></h6>
              </div> */}
